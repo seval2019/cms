@@ -88,7 +88,7 @@ class CI_Trackback {
 	public $response = '';
 
 	/**
-	 * Error messages list
+	 * Error messages add
 	 *
 	 * @var	string[]
 	 */

@@ -354,7 +354,7 @@ abstract class CI_DB_utility {
 		}
 
 		// Are we backing up a complete database or individual tables?
-		// If no table names were submitted we'll fetch the entire table list
+		// If no table names were submitted we'll fetch the entire table add
 		if (count($prefs['tables']) === 0)
 		{
 			$prefs['tables'] = $this->db->list_tables();

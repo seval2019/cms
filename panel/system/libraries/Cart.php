@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class CI_Cart {
 
 	/**
-	 * These are the regular expression rules that we use to validate the product ID and product name
+	 * These are the regular expression rules that we use to validate the product_v ID and product_v name
 	 * alpha-numeric, dashes, underscores, or periods
 	 *
 	 * @var string
@@ -58,7 +58,7 @@ class CI_Cart {
 	public $product_id_rules = '\.a-z0-9_-';
 
 	/**
-	 * These are the regular expression rules that we use to validate the product ID and product name
+	 * These are the regular expression rules that we use to validate the product_v ID and product_v name
 	 * alpha-numeric, dashes, underscores, colons or periods
 	 *
 	 * @var string
@@ -66,7 +66,7 @@ class CI_Cart {
 	public $product_name_rules = '\w \-\.\:';
 
 	/**
-	 * only allow safe product names
+	 * only allow safe product_v names
 	 *
 	 * @var bool
 	 */
@@ -135,7 +135,7 @@ class CI_Cart {
 			return FALSE;
 		}
 
-		// You can either insert a single product using a one-dimensional array,
+		// You can either insert a single product_v using a one-dimensional array,
 		// or multiple products using a multi-dimensional one. The way we
 		// determine the array type is by looking for a required array key named "id"
 		// at the top level. If it's not found, we will assume it's a multi-dimensional array.
@@ -194,7 +194,7 @@ class CI_Cart {
 		// Does the $items array contain an id, quantity, price, and name?  These are required
 		if ( ! isset($items['id'], $items['qty'], $items['price'], $items['name']))
 		{
-			log_message('error', 'The cart array must contain a product ID, quantity, price, and name.');
+			log_message('error', 'The cart array must contain a product_v ID, quantity, price, and name.');
 			return FALSE;
 		}
 
@@ -211,22 +211,22 @@ class CI_Cart {
 
 		// --------------------------------------------------------------------
 
-		// Validate the product ID. It can only be alpha-numeric, dashes, underscores or periods
+		// Validate the product_v ID. It can only be alpha-numeric, dashes, underscores or periods
 		// Not totally sure we should impose this rule, but it seems prudent to standardize IDs.
 		// Note: These can be user-specified by setting the $this->product_id_rules variable.
 		if ( ! preg_match('/^['.$this->product_id_rules.']+$/i', $items['id']))
 		{
-			log_message('error', 'Invalid product ID.  The product ID can only contain alpha-numeric characters, dashes, and underscores');
+			log_message('error', 'Invalid product_v ID.  The product_v ID can only contain alpha-numeric characters, dashes, and underscores');
 			return FALSE;
 		}
 
 		// --------------------------------------------------------------------
 
-		// Validate the product name. It can only be alpha-numeric, dashes, underscores, colons or periods.
+		// Validate the product_v name. It can only be alpha-numeric, dashes, underscores, colons or periods.
 		// Note: These can be user-specified by setting the $this->product_name_rules variable.
 		if ($this->product_name_safe && ! preg_match('/^['.$this->product_name_rules.']+$/i'.(UTF8_ENABLED ? 'u' : ''), $items['name']))
 		{
-			log_message('error', 'An invalid name was submitted as the product name: '.$items['name'].' The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces');
+			log_message('error', 'An invalid name was submitted as the product_v name: '.$items['name'].' The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces');
 			return FALSE;
 		}
 
@@ -238,12 +238,12 @@ class CI_Cart {
 		// We now need to create a unique identifier for the item being inserted into the cart.
 		// Every time something is added to the cart it is stored in the master cart array.
 		// Each row in the cart array, however, must have a unique index that identifies not only
-		// a particular product, but makes it possible to store identical products with different options.
-		// For example, what if someone buys two identical t-shirts (same product ID), but in
-		// different sizes?  The product ID (and other attributes, like the name) will be identical for
+		// a particular product_v, but makes it possible to store identical products with different options.
+		// For example, what if someone buys two identical t-shirts (same product_v ID), but in
+		// different sizes?  The product_v ID (and other attributes, like the name) will be identical for
 		// both sizes because it's the same shirt. The only difference will be the size.
-		// Internally, we need to treat identical submissions, but with different options, as a unique product.
-		// Our solution is to convert the options array to a string and MD5 it along with the product ID.
+		// Internally, we need to treat identical submissions, but with different options, as a unique product_v.
+		// Our solution is to convert the options array to a string and MD5 it along with the product_v ID.
 		// This becomes the unique "row ID"
 		if (isset($items['options']) && count($items['options']) > 0)
 		{
@@ -251,7 +251,7 @@ class CI_Cart {
 		}
 		else
 		{
-			// No options were submitted so we simply MD5 the product ID.
+			// No options were submitted so we simply MD5 the product_v ID.
 			// Technically, we don't need to MD5 the ID in this case, but it makes
 			// sense to standardize the format of array indexes for both conditions
 			$rowid = md5($items['id']);
@@ -279,7 +279,7 @@ class CI_Cart {
 	 * This function permits the quantity of a given item to be changed.
 	 * Typically it is called from the "view cart" page if a user makes
 	 * changes to the quantity before checkout. That array must contain the
-	 * product ID and quantity for each item.
+	 * product_v ID and quantity for each item.
 	 *
 	 * @param	array
 	 * @return	bool
@@ -292,7 +292,7 @@ class CI_Cart {
 			return FALSE;
 		}
 
-		// You can either update a single product using a one-dimensional array,
+		// You can either update a single product_v using a one-dimensional array,
 		// or multiple products using a multi-dimensional one.  The way we
 		// determine the array type is by looking for a required array key named "rowid".
 		// If it's not found we assume it's a multi-dimensional array
@@ -370,7 +370,7 @@ class CI_Cart {
 			$items['price'] = (float) $items['price'];
 		}
 
-		// product id & name shouldn't be changed
+		// product_v id & name shouldn't be changed
 		foreach (array_diff($keys, array('id', 'name')) as $key)
 		{
 			$this->_cart_contents[$items['rowid']][$key] = $items[$key];
@@ -524,7 +524,7 @@ class CI_Cart {
 	/**
 	 * Product options
 	 *
-	 * Returns the an array of options, for a particular product row ID
+	 * Returns the an array of options, for a particular product_v row ID
 	 *
 	 * @param	string	$row_id = ''
 	 * @return	array

@@ -157,7 +157,7 @@ class CI_Profiler {
 		$profile = array();
 		foreach ($this->CI->benchmark->marker as $key => $val)
 		{
-			// We match the "end" marker so that the list ends
+			// We match the "end" marker so that the add ends
 			// up in the order that it was defined
 			if (preg_match('/(.+?)_end$/i', $key, $match)
 				&& isset($this->CI->benchmark->marker[$match[1].'_end'], $this->CI->benchmark->marker[$match[1].'_start']))

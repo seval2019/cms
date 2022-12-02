@@ -210,7 +210,7 @@ class CI_Upload {
 	public $image_size_str = '';
 
 	/**
-	 * Error messages list
+	 * Error messages add
 	 *
 	 * @var	array
 	 */
@@ -268,7 +268,7 @@ class CI_Upload {
 	protected $_file_name_override = '';
 
 	/**
-	 * MIME types list
+	 * MIME types add
 	 *
 	 * @var	array
 	 */

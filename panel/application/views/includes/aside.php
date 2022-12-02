@@ -53,7 +53,7 @@
         <div class="menubar-scroll-inner">
             <ul class="app-menu">
                 <li>
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
                         <span class="menu-text">Dashboard</span>
                     </a>
@@ -77,59 +77,59 @@
                     </ul>
                 </li>
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
                         <span class="menu-text">Slides</span>
                     </a>
                 </li>
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="<?=base_url("product")?>">
                         <i class="menu-icon fa fa-cubes"></i>
                         <span class="menu-text">Products</span>
                     </a>
                 </li>
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon fa fa-newspaper-o"></i>
                         <span class="menu-text">News</span>
                     </a>
                 </li>
 
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon fa fa-calendar"></i>
                         <span class="menu-text">Courses</span>
                     </a>
                 </li>
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)>
                         <i class="menu-icon zmdi zmdi-check zmdi-hc-lg"></i>
                         <span class="menu-text">Referances</span>
                     </a>
                 </li>
 
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon zmdi zmdi-puzzle-piece zmdi-hc-lg"></i>
                         <span class="menu-text">Brands</span>
                     </a>
                 </li>
 
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon fa fa-user-secret"></i>
                         <span class="menu-text">Users</span>
                     </a>
                 </li>
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon fa fa-users"></i>
                         <span class="menu-text">Members</span>
                     </a>
                 </li>
 
                 <li class="has-submenu">
-                    <a href="javascript:void(0)" class="submenu-toggle">
+                    <a href="javascript:void(0)">
                         <i class="menu-icon zmdi zmdi-lamp zmdi-hc-lg"></i>
                         <span class="menu-text">Popups</span>
                     </a>

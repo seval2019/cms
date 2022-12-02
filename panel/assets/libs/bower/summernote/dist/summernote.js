@@ -160,10 +160,10 @@
   /**
    * @class core.list
    *
-   * list utils
+   * add utils
    *
    * @singleton
-   * @alternateClassName list
+   * @alternateClassName add
    */
   var list = (function () {
     /**
@@ -234,14 +234,14 @@
     };
 
     /**
-     * returns true if the value is present in the list.
+     * returns true if the value is present in the add.
      */
     var contains = function (array, item) {
       return indexOf(array, item) !== -1;
     };
 
     /**
-     * get sum from a list
+     * get sum from a add
      *
      * @param {Array} array - array
      * @param {Function} fn - iterator
@@ -266,7 +266,7 @@
     };
 
     /**
-     * returns whether list is empty or not
+     * returns whether add is empty or not
      */
     var isEmpty = function (array) {
       return !array || !array.length;
@@ -2084,8 +2084,8 @@
         h6: 'Header 6'
       },
       lists: {
-        unordered: 'Unordered list',
-        ordered: 'Ordered list'
+        unordered: 'Unordered add',
+        ordered: 'Ordered add'
       },
       options: {
         help: 'Help',
@@ -2135,8 +2135,8 @@
         'justifyCenter': 'Set center align',
         'justifyRight': 'Set right align',
         'justifyFull': 'Set full align',
-        'insertUnorderedList': 'Toggle unordered list',
-        'insertOrderedList': 'Toggle ordered list',
+        'insertUnorderedList': 'Toggle unordered add',
+        'insertOrderedList': 'Toggle ordered add',
         'outdent': 'Outdent on current paragraph',
         'indent': 'Indent on current paragraph',
         'formatPara': 'Change current block\'s format as a paragraph(P tag)',
@@ -2680,7 +2680,7 @@
   
       // isOnEditable: judge whether range is on editable or not
       this.isOnEditable = makeIsOn(dom.isEditable);
-      // isOnList: judge whether range is on list node or not
+      // isOnList: judge whether range is on add node or not
       this.isOnList = makeIsOn(dom.isList);
       // isOnAnchor: judge whether range is on anchor node or not
       this.isOnAnchor = makeIsOn(dom.isAnchor);
@@ -3342,7 +3342,7 @@
         });
       } catch (e) {}
 
-      // list-style-type to list-style(unordered, ordered)
+      // add-style-type to add-style(unordered, ordered)
       if (!rng.isOnList()) {
         styleInfo['list-style'] = 'none';
       } else {
@@ -3377,14 +3377,14 @@
     var self = this;
 
     /**
-     * toggle ordered list
+     * toggle ordered add
      */
     this.insertOrderedList = function (editable) {
       this.toggleList('OL', editable);
     };
 
     /**
-     * toggle unordered list
+     * toggle unordered add
      */
     this.insertUnorderedList = function (editable) {
       this.toggleList('UL', editable);
@@ -3444,7 +3444,7 @@
     };
 
     /**
-     * toggle list
+     * toggle add
      *
      * @param {String} listName - OL or UL
      */
@@ -3455,14 +3455,14 @@
       var bookmark = rng.paraBookmark(paras);
       var clustereds = list.clusterBy(paras, func.peq2('parentNode'));
 
-      // paragraph to list
+      // paragraph to add
       if (list.find(paras, dom.isPurePara)) {
         var wrappedParas = [];
         $.each(clustereds, function (idx, paras) {
           wrappedParas = wrappedParas.concat(self.wrapList(paras, listName));
         });
         paras = wrappedParas;
-      // list to paragraph or change list style
+      // add to paragraph or change add style
       } else {
         var diffLists = rng.nodes(dom.isList, {
           includeAncestor: true
@@ -3501,7 +3501,7 @@
         return dom.isPurePara(para) ? dom.replace(para, 'LI') : para;
       });
 
-      // append to list(<ul>, <ol>)
+      // append to add(<ul>, <ol>)
       dom.appendChildNodes(listNode, paras);
 
       if (nextList) {
@@ -5379,7 +5379,7 @@
               children: [justifyLeft, justifyCenter, justifyRight, justifyFull]
             }),
             ui.buttonGroup({
-              className: 'note-list',
+              className: 'note-add',
               children: [outdent, indent]
             })
           ])
@@ -6342,7 +6342,7 @@
       var keyMap = options.keyMap[agent.isMac ? 'mac' : 'pc'];
       return Object.keys(keyMap).map(function (key) {
         var command = keyMap[key];
-        var $row = $('<div><div class="help-list-item"/></div>');
+        var $row = $('<div><div class="help-add-item"/></div>');
         $row.append($('<label><kbd>' + key + '</kdb></label>').css({
           'width': 180,
           'margin-right': 10

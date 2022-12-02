@@ -157,7 +157,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	protected $qb_set_ub			= array();
 
 	/**
-	 * QB aliased tables list
+	 * QB aliased tables add
 	 *
 	 * @var	array
 	 */
@@ -187,7 +187,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	protected $qb_caching				= FALSE;
 
 	/**
-	 * QB Cache exists list
+	 * QB Cache exists add
 	 *
 	 * @var	array
 	 */
@@ -215,7 +215,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	protected $qb_cache_join			= array();
 
 	/**
-	 * QB Cache aliased tables list
+	 * QB Cache aliased tables add
 	 *
 	 * @var	array
 	 */

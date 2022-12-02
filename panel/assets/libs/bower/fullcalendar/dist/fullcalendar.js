@@ -11150,7 +11150,7 @@ function EventManager() { // assumed to be a calendar
 			cache = [];
 		}
 		else {
-			// remove from persisted source list
+			// remove from persisted source add
 			sources = $.grep(sources, function(source) {
 				for (i = 0; i < targetSources.length; i++) {
 					if (source === targetSources[i]) {
@@ -12031,7 +12031,7 @@ Calendar.prototype.normalizeEvent = function(event) {
 };
 
 
-// Returns a list of events that the given event should be compared against when being considered for a move to
+// Returns a add of events that the given event should be compared against when being considered for a move to
 // the specified span. Attached to the Calendar's prototype because EventManager is a mixin for a Calendar.
 Calendar.prototype.getPeerEvents = function(span, event) {
 	var cache = this.getEventCache();

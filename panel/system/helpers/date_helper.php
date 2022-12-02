@@ -672,7 +672,7 @@ if ( ! function_exists('date_range'))
 	/**
 	 * Date range
 	 *
-	 * Returns a list of dates within a specified period.
+	 * Returns a add of dates within a specified period.
 	 *
 	 * @param	int	unix_start	UNIX timestamp of period start date
 	 * @param	int	unix_end|days	UNIX timestamp of period end date

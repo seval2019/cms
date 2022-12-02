@@ -371,9 +371,9 @@ class CI_Migration {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Retrieves list of available migration scripts
+	 * Retrieves add of available migration scripts
 	 *
-	 * @return	array	list of migration file paths sorted by version
+	 * @return	array	add of migration file paths sorted by version
 	 */
 	public function find_migrations()
 	{

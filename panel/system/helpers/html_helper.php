@@ -74,7 +74,7 @@ if ( ! function_exists('ul'))
 	/**
 	 * Unordered List
 	 *
-	 * Generates an HTML unordered list from an single or multi-dimensional array.
+	 * Generates an HTML unordered add from an single or multi-dimensional array.
 	 *
 	 * @param	array
 	 * @param	mixed
@@ -93,7 +93,7 @@ if ( ! function_exists('ol'))
 	/**
 	 * Ordered List
 	 *
-	 * Generates an HTML ordered list from an single or multi-dimensional array.
+	 * Generates an HTML ordered add from an single or multi-dimensional array.
 	 *
 	 * @param	array
 	 * @param	mixed
@@ -110,9 +110,9 @@ if ( ! function_exists('ol'))
 if ( ! function_exists('_list'))
 {
 	/**
-	 * Generates the list
+	 * Generates the add
 	 *
-	 * Generates an HTML ordered list from an single or multi-dimensional array.
+	 * Generates an HTML ordered add from an single or multi-dimensional array.
 	 *
 	 * @param	string
 	 * @param	mixed
@@ -130,11 +130,11 @@ if ( ! function_exists('_list'))
 
 		// Set the indentation based on the depth
 		$out = str_repeat(' ', $depth)
-			// Write the opening list tag
+			// Write the opening add tag
 			.'<'.$type._stringify_attributes($attributes).">\n";
 
 
-		// Cycle through the list elements.  If an array is
+		// Cycle through the add elements.  If an array is
 		// encountered we will recursively call _list()
 
 		static $_last_list_item = '';

@@ -466,7 +466,7 @@ abstract class CI_DB_forge {
 
 		$query = $this->db->query($query);
 
-		// Update table list cache
+		// Update table add cache
 		if ($query && ! empty($this->db->data_cache['table_names']))
 		{
 			$key = array_search(strtolower($this->db->dbprefix.$table_name), array_map('strtolower', $this->db->data_cache['table_names']), TRUE);
@@ -980,7 +980,7 @@ abstract class CI_DB_forge {
 	 * Process indexes
 	 *
 	 * @param	string	$table	Table name
-	 * @return	string[] list of SQL statements
+	 * @return	string[] add of SQL statements
 	 */
 	protected function _process_indexes($table)
 	{

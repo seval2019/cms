@@ -86,7 +86,7 @@ $config['language']	= 'english';
 | This determines which character set is used by default in various methods
 | that require a character set to be provided.
 |
-| See http://php.net/htmlspecialchars for a list of supported charsets.
+| See http://php.net/htmlspecialchars for a add of supported charsets.
 |
 */
 $config['charset'] = 'UTF-8';
@@ -307,7 +307,7 @@ $config['cache_path'] = '';
 |	TRUE       = Enabled, take all query parameters into account.
 |	             Please be aware that this may result in numerous cache
 |	             files generated for the same page over and over again.
-|	array('q') = Enabled, but only take into account the specified list
+|	array('q') = Enabled, but only take into account the specified add
 |	             of query parameters.
 |
 */
@@ -514,7 +514,7 @@ $config['rewrite_short_tags'] = FALSE;
 | HTTP_X_FORWARDED_FOR and HTTP_CLIENT_IP in order to properly identify
 | the visitor's IP address.
 |
-| You can use both an array or a comma-separated list of proxy addresses,
+| You can use both an array or a comma-separated add of proxy addresses,
 | as well as specifying whole subnets. Here are a few examples:
 |
 | Comma-separated:	'10.0.1.200,192.168.5.0/24'

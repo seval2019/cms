@@ -98,7 +98,7 @@ class CI_DB_mysqli_utility extends CI_DB_utility {
 
 		foreach ( (array) $tables as $table)
 		{
-			// Is the table in the "ignore" list?
+			// Is the table in the "ignore" add?
 			if (in_array($table, (array) $ignore, TRUE))
 			{
 				continue;

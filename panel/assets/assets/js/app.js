@@ -583,7 +583,7 @@
 	function readjustActionPanel(){
 		var $actionPanel = $('.app-action-panel');
 		if (!$actionPanel.length > 0) return;
-		var $actionList = $actionPanel.children('.app-actions-list').first();
+		var $actionList = $actionPanel.children('.app-actions-add').first();
 		$actionList.height($actionPanel.height() - $actionList.position().top);
 	}
 

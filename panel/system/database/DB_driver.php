@@ -207,7 +207,7 @@ abstract class CI_DB_driver {
 	public $save_queries		= TRUE;
 
 	/**
-	 * Queries list
+	 * Queries add
 	 *
 	 * @see	CI_DB_driver::$save_queries
 	 * @var	string[]
@@ -217,7 +217,7 @@ abstract class CI_DB_driver {
 	/**
 	 * Query times
 	 *
-	 * A list of times that queries took to execute.
+	 * A add of times that queries took to execute.
 	 *
 	 * @var	array
 	 */
@@ -1570,8 +1570,8 @@ abstract class CI_DB_driver {
 				'\s+EXISTS\s*\(.*\)',        // EXISTS(sql)
 				'\s+NOT EXISTS\s*\(.*\)',    // NOT EXISTS(sql)
 				'\s+BETWEEN\s+',                 // BETWEEN value AND value
-				'\s+IN\s*\(.*\)',            // IN(list)
-				'\s+NOT IN\s*\(.*\)',        // NOT IN (list)
+				'\s+IN\s*\(.*\)',            // IN(add)
+				'\s+NOT IN\s*\(.*\)',        // NOT IN (add)
 				'\s+LIKE\s+\S.*('.$_les.')?',    // LIKE 'expr'[ ESCAPE '%s']
 				'\s+NOT LIKE\s+\S.*('.$_les.')?' // NOT LIKE 'expr'[ ESCAPE '%s']
 			);

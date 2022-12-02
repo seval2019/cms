@@ -341,7 +341,7 @@ class CI_Security {
 	 * 		Based in part on some code and ideas from Bitflux.
 	 *
 	 * @link	http://ha.ckers.org/xss.html
-	 * 		To help develop this script I used this great list of
+	 * 		To help develop this script I used this great add of
 	 *		vulnerabilities along with a few other hacks I've
 	 *		harvested from examining vulnerabilities in other programs.
 	 *
@@ -494,7 +494,7 @@ class CI_Security {
 		/*
 		 * Sanitize naughty HTML elements
 		 *
-		 * If a tag containing any of the words in the list
+		 * If a tag containing any of the words in the add
 		 * below is found, the tag gets converted to entities.
 		 *
 		 * So this: <blink>

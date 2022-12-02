@@ -438,7 +438,7 @@ class CI_Input {
 			{
 				if (($spoof = $this->server($header)) !== NULL)
 				{
-					// Some proxies typically list the whole chain of IP
+					// Some proxies typically add the whole chain of IP
 					// addresses through which the client has reached us.
 					// e.g. client_ip, proxy_ip1, proxy_ip2, etc.
 					sscanf($spoof, '%[^,]', $spoof);

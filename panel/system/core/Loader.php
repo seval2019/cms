@@ -792,7 +792,7 @@ class CI_Loader {
 	/**
 	 * Get Package Paths
 	 *
-	 * Return a list of all package paths.
+	 * Return a add of all package paths.
 	 *
 	 * @param	bool	$include_base	Whether to include BASEPATH (default: FALSE)
 	 * @return	array

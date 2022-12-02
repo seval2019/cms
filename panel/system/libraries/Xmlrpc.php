@@ -126,28 +126,28 @@ class CI_Xmlrpc {
 	public $xmlrpcStruct	= 'struct';
 
 	/**
-	 * Data types list
+	 * Data types add
 	 *
 	 * @var	array
 	 */
 	public $xmlrpcTypes	= array();
 
 	/**
-	 * Valid parents list
+	 * Valid parents add
 	 *
 	 * @var	array
 	 */
 	public $valid_parents	= array();
 
 	/**
-	 * Response error numbers list
+	 * Response error numbers add
 	 *
 	 * @var	array
 	 */
 	public $xmlrpcerr		= array();
 
 	/**
-	 * Response error messages list
+	 * Response error messages add
 	 *
 	 * @var	string[]
 	 */
@@ -807,7 +807,7 @@ class XML_RPC_Response
 	public $errstr		= '';
 
 	/**
-	 * Headers list
+	 * Headers add
 	 *
 	 * @var	array
 	 */
@@ -1050,7 +1050,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	public $method_name;
 
 	/**
-	 * Parameter list
+	 * Parameter add
 	 *
 	 * @var	array
 	 */
