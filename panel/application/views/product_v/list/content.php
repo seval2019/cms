@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <h4 class="m-b-lg">Ürünler Listesi <a type="button" href="#" class="btn btn-xs btn-primary pull-right btn-outline"><i class="fa fa-plus-square"></i> Ekle</a></h4>
+        <h4 class="m-b-lg">Ürünler Listesi <a type="button" href="<?=base_url("product/new_form");?>" class="btn btn-xs btn-primary pull-right btn-outline"><i class="fa fa-plus-square"></i> Ekle</a></h4>
 
     </div>
     <div class="col-md-12">
@@ -8,7 +8,7 @@
             <?php if(empty($items))
             {?>
                 <div class="alert alert-info text-center">
-                    <p>Aradığınız ürün bulunamamaktadır. Eklemek için lütfen <a href="#">tıklayınız</a></p>
+                    <p>Aradığınız ürün bulunamamaktadır. Eklemek için lütfen <a href="<?=base_url("product/new_form");?>">tıklayınız</a></p>
                 </div>
             <?php }
             else{ ?>
