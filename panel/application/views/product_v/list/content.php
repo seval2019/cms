@@ -1,29 +1,52 @@
 <div class="row">
     <div class="col-md-12">
-        <h4 class="m-b-lg">Ürünler Listesi</h4>
+        <h4 class="m-b-lg">Ürünler Listesi <a type="button" href="#" class="btn btn-xs btn-primary pull-right btn-outline"><i class="fa fa-plus-square"></i> Ekle</a></h4>
+
     </div>
     <div class="col-md-12">
         <div class="widget p-lg">
+            <?php if(empty($items))
+            {?>
+                <div class="alert alert-info text-center">
+                    <p>Aradığınız ürün bulunamamaktadır. Eklemek için lütfen <a href="#">tıklayınız</a></p>
+                </div>
+            <?php }
+            else{ ?>
+
             <table class="table table-striped">
                 <thead>
-                <th>#id</th>
-                <th>Url</th>
-                <th>Başlık</th>
-                <th>Açıklama</th>
-                <th>Durumu</th>
-                <th>İşlem</th>
+                    <th>#id</th>
+                    <th>Url</th>
+                    <th>Başlık</th>
+                    <th>Açıklama</th>
+                    <th>Durumu</th>
+                    <th>İşlem</th>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>#1</td>
-                    <td>HTMI Kablo</td>
-                    <td>HTMI Kablo</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-                    <td>1/0</td>
-                    <td>
-                        <a type="button" href="#" class="btn btn-xs btn-danger btn-outline"><i class="fa fa-trash"></i> Sil</a>
-                        <a type="button" href="#" class="btn btn-xs btn-info btn-outline"><i class="fa fa-pencil-square-o"></i> Düzenle</a>
-                </tr>
+                <?php
+                foreach ($items as $veriler)
+                    {?>
+                        <tr>
+                            <td><?= $veriler->id ?></td>
+                            <td><?= $veriler->url ?></td>
+                            <td><?= $veriler->title ?></td>
+                            <td><?=$veriler->description?></td>
+                            <td>
+                                <input
+                                        type="checkbox"
+                                        data-switchery
+                                        data-color="#10c469"
+                                        data-size="small"
+                                        <?= ($veriler->isActive)  ? "checked" : "";?>
+                                />
+                            </td>
+                            <td>
+                                <a type="button" href="#" class="btn btn-xs btn-danger btn-outline"><i class="fa fa-trash"></i> Sil</a>
+                                <a type="button" href="#" class="btn btn-xs btn-info btn-outline"><i class="fa fa-pencil-square-o"></i> Düzenle</a>
+                        </tr>
+                    <?php
+                    }
+                }?>
                 </tbody>
             </table>
         </div><!-- .widget -->
