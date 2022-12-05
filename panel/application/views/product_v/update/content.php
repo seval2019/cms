@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-md-12">
-        <h4 class="m-b-lg"><b><?=$item->title?></b> adlı kayıt güncelleme sayfası</h4>
+        <h4 class="m-b-lg"><b><?=$item->title;?></b> adlı kayıt güncelleme sayfası</h4>
     </div>
     <div class="col-md-12">
             <div class="widget">
                 <hr class="widget-separator">
                 <div class="widget-body">
-                    <form action="<?=base_url("product/save")?>" method="post">
+                    <form action="<?=base_url("product/update/$item->id")?>" method="post">
                         <div class="form-group">
                             <label>Başlık</label>
                             <input type="text" class="form-control" placeholder="Başlık" name="title" value="<?=$item->title;?>">
@@ -19,7 +19,7 @@
                             <label for="exampleInputPassword1">Password</label>
                             <textarea class="m-0" data-plugin="summernote" data-options="{height: 250}" name="description"><?=$item->description?></textarea>
                         </div>
-                        <a href="<?=base_url("product");?>" type="submit" class="btn btn-primary btn-outline btn-md"> <i class="fa fa-save"></i> Güncelle</a>
+                        <button type="submit" class="btn btn-primary btn-outline btn-md"> <i class="fa fa-save"></i> Güncelle</button>
                         <a href="<?=base_url("product");?>" type="submit" class="btn btn-danger btn-outline btn-md "><i class="fa fa-ban"></i> İptal</a>
                     </form>
                 </div><!-- .widget-body -->
