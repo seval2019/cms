@@ -11,7 +11,6 @@ class Product extends CI_Controller {
         $this->viewFolder="product_v";
         $this->load->model("product_model");
     }
-
     public function index()
 	{
         $viewData=new stdClass();
@@ -75,7 +74,6 @@ class Product extends CI_Controller {
             $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
         }
     }
-
     public function update_form($id)
     {
         /*Tablodan is si verilen verinin alınması */
@@ -136,5 +134,22 @@ class Product extends CI_Controller {
             $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
         }
     }
-
+    public function delete($id){
+            $delete=$this->product_model->delete(
+                array(
+                    "id"=>$id
+                )
+            );
+            if($delete){
+                redirect(base_url("product"));
+            }else{
+                redirect(base_url("product"));
+            }
+            /*Tablodan id si verilen verinin alınması */
+            $item=$this->product_model->get(
+                array(
+                    "id"=>$id
+                )
+            );
+        }
 }

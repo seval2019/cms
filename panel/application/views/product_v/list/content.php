@@ -41,7 +41,7 @@
                                 />
                             </td>
                             <td>
-                                <a type="button" href="#" class="btn btn-xs btn-danger btn-outline m-b-xs"><i class="fa fa-trash"></i> Sil</a>
+                                <a type="button" href="<?=base_url("product/delete/$veriler->id");?>" class="btn btn-xs btn-danger btn-outline m-b-xs"><i class="fa fa-trash"></i> Sil</a>
                                 <a type="button" href="<?=base_url("product/update_form/$veriler->id");?>" class="btn btn-xs btn-info btn-outline"><i class="fa fa-pencil-square-o"></i> Düzenle</a>
                         </tr>
                     <?php
