@@ -56,9 +56,9 @@ class Product extends CI_Controller {
                 "createdAt"    =>date("Y-m-d H:i:s")
             ));
             if($insert){
-                echo "Kayıt işlemi başarılı";
+               redirect(base_url("product"));
             }else{
-                echo "kayıt işleminde bir sorun var";
+                redirect(base_url("product"));
             }
         }else{
             //Değilse hata ekranda görünür
