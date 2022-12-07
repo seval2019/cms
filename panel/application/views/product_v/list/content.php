@@ -33,6 +33,8 @@
                             <td><?=$veriler->description?></td>
                             <td>
                                 <input
+                                        data_url="<?=base_url("product/isActiveSetter/$veriler->id");?>"
+                                        class="isActive"
                                         type="checkbox"
                                         data-switchery
                                         data-color="#10c469"
