@@ -1,4 +1,6 @@
     $(document).ready(function (){
+        /*Sortable Code*/
+        $(".sortable").sortable();
         /*Sweeatalert2 Code*/
         $(".remove-btn").click(function(){
            var data_url=$(this).attr("data_url");
@@ -27,6 +29,12 @@
 
             }
 
+        })
+        /*Sortable add db*/
+        $(".sortable").on("sortupdate",function (event,ui){
+           var  $data=$(this).sortable("serialize"); //Serialize :Burada oluşturulan değişkenin verisini url olarak alır.
+           var  $data_url=$(this).data("url");
+           $.post($data_url ,{data : $data},function(response){}); //alert(response);//urlden gelen cevapları karşılayacak
         })
 
     });

@@ -15,21 +15,23 @@
 
             <table class="table table-striped">
                 <thead>
+                    <th><i class="fa fa-reorder"></i></th>
                     <th>#id</th>
-                    <th>Url</th>
                     <th>Başlık</th>
+                    <th>Url</th>
                     <th>Açıklama</th>
                     <th>Durumu</th>
                     <th>İşlem</th>
                 </thead>
-                <tbody>
+                <tbody class="sortable" data-url="<?=base_url("product/rankSetter")?>">
                 <?php
                 foreach ($items as $veriler)
                     {?>
-                        <tr>
+                        <tr id="ord-<?=$veriler->id?>">
+                            <td><i class="fa fa-reorder"></i></td>
                             <td><?= $veriler->id ?></td>
-                            <td><?= $veriler->url ?></td>
                             <td><?= $veriler->title ?></td>
+                            <td><?= $veriler->url ?></td>
                             <td><?=$veriler->description?></td>
                             <td>
                                 <input
@@ -45,10 +47,11 @@
                             <td>
                                 <button type="button"
                                         data_url="<?=base_url("product/delete/$veriler->id");?>"
-                                        class="btn btn-xs btn-danger btn-outline m-b-xs remove-btn">
+                                        class="btn btn-xs btn-danger btn-outline remove-btn">
                                     <i class="fa fa-trash"></i> Sil
                                 </button>
-                                <a type="button" href="<?=base_url("product/update_form/$veriler->id");?>" class="btn btn-xs btn-info btn-outline"><i class="fa fa-pencil-square-o"></i> Düzenle</a>
+                                <a type="button" href="<?=base_url("product/update_form/$veriler->id");?>" class="btn btn-xs btn-info btn-outline">
+                                    <i class="fa fa-pencil-square-o"></i> Düzenle</a>
                         </tr>
                     <?php
                     }

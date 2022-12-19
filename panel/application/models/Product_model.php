@@ -9,9 +9,9 @@ class Product_model extends CI_Model{
         parent::__construct();
     }
     /*DB 'deki tüm kayıtları getirecek metod */
-    public function get_all($where=array())
+    public function get_all($where=array(),$order="id ASC")
     {
-        return $this->db->where($where)->get($this->tableName)->result();
+        return $this->db->where($where)->order_by($order)->get($this->tableName)->result();
     }
     public function add($data=array()){
         return $this->db->insert($this->tableName,$data);
