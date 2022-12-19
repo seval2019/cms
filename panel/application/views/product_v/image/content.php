@@ -1,8 +1,5 @@
 <div class="row">
     <div class="col-md-12">
-        <h4 class="m-b-lg">Ürün Fotoğraf Ekleme Sayfası</h4>
-    </div>
-    <div class="col-md-12">
             <div class="widget">
                 <hr class="widget-separator">
                 <div class="widget-body">
@@ -18,23 +15,25 @@
 </div><!-- .row -->
 <div class="row">
     <div class="col-md-12">
-        <h4 class="m-b-lg">Ürün Fotoğraf Ekleme Sayfası</h4>
+        <h4 class="m-b-lg">Ürün Fotoğrafları..</h4>
     </div>
     <div class="col-md-12">
         <div class="widget">
             <hr class="widget-separator">
             <div class="widget-body">
-                <table class="table table-bordered table-striped table-hover">
+                <table class="table table-bordered table-striped table-hover pictures_list">
                     <tr>
                         <th>Id</th>
-                        <th>Resim</th>
+                        <th>Görsel</th>
+                        <th>Görsel Adı</th>
                         <th>Durumu</th>
                         <th>İşlem</th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td><img src="https://picsum.photos/seed/picsum/300/200" alt="" class="img-responsive" style="width:40px"></td>
-                        <td> <input
+                        <td class="w-100 text-center">1</td>
+                        <td class="w-100"><img src="https://picsum.photos/seed/picsum/300/200" alt="" class="img-responsive" style="width:40px"></td>
+                        <td>Doğanın Gizemi</td>
+                        <td class="w-100 text-center"> <input
                                     data_url="<?=base_url("product/isActiveSetter/");?>"
                                     class="isActive"
                                     type="checkbox"
@@ -43,30 +42,10 @@
                                     data-size="small"
                                <?= (true)  ? "checked" : "";?>
                             /></td>
-                        <td>
+                        <td class="w-100 text-center">
                             <button type="button"
                                     data_url="<?=base_url("product/delete/");?>"
-                                    class="btn btn-xs btn-danger btn-outline remove-btn">
-                                <i class="fa fa-trash"></i> Sil
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td><img src="https://picsum.photos/seed/picsum/300/200" alt="" class="img-responsive" style="width:40px"></td>
-                        <td> <input
-                                    data_url="<?=base_url("product/isActiveSetter/");?>"
-                                    class="isActive"
-                                    type="checkbox"
-                                    data-switchery
-                                    data-color="#10c469"
-                                    data-size="small"
-                                <?= (true)  ? "checked" : "";?>
-                            /></td>
-                        <td>
-                            <button type="button"
-                                    data_url="<?=base_url("product/delete/");?>"
-                                    class="btn btn-xs btn-danger btn-outline remove-btn">
+                                    class="btn btn-xs btn-danger btn-outline remove-btn btn-block">
                                 <i class="fa fa-trash"></i> Sil
                             </button>
                         </td>
