@@ -48,12 +48,12 @@
                                 <button type="button"
                                         data_url="<?=base_url("product/delete/$veriler->id");?>"
                                         class="btn btn-xs btn-danger btn-outline remove-btn">
-                                    <i class="fa fa-trash"></i> Sil
+                                    <i class="fa fa-trash"></i>
                                 </button>
                                 <a type="button" href="<?=base_url("product/update_form/$veriler->id");?>" class="btn btn-xs btn-info btn-outline">
-                                    <i class="fa fa-pencil-square-o"></i> Düzenle</a>
+                                    <i class="fa fa-pencil-square-o"></i></a>
                                 <a type="button" href="<?=base_url("product/image_form/$veriler->id");?>" class="btn btn-xs btn-success btn-outline">
-                                    <i class="fa fa-image"></i> Resim</a>
+                                    <i class="fa fa-image"></i></a>
                         </tr>
                     <?php
                     }

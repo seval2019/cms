@@ -2,7 +2,7 @@
 
 class Product_model extends CI_Model{
 
-    public $tableName="products";
+    public $tableName="product_v";
 
     public function __construct()
     {
