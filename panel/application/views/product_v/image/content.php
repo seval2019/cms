@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td><img src="https://picsum.photos/seed/picsum/300/150" alt="" class="img-responsive" style="width: 50px"></td>
+                        <td><img src="https://picsum.photos/seed/picsum/300/200" alt="" class="img-responsive" style="width:40px"></td>
                         <td> <input
                                     data_url="<?=base_url("product/isActiveSetter/");?>"
                                     class="isActive"
@@ -42,6 +42,26 @@
                                     data-color="#10c469"
                                     data-size="small"
                                <?= (true)  ? "checked" : "";?>
+                            /></td>
+                        <td>
+                            <button type="button"
+                                    data_url="<?=base_url("product/delete/");?>"
+                                    class="btn btn-xs btn-danger btn-outline remove-btn">
+                                <i class="fa fa-trash"></i> Sil
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://picsum.photos/seed/picsum/300/200" alt="" class="img-responsive" style="width:40px"></td>
+                        <td> <input
+                                    data_url="<?=base_url("product/isActiveSetter/");?>"
+                                    class="isActive"
+                                    type="checkbox"
+                                    data-switchery
+                                    data-color="#10c469"
+                                    data-size="small"
+                                <?= (true)  ? "checked" : "";?>
                             /></td>
                         <td>
                             <button type="button"
