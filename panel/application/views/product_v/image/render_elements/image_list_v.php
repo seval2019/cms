@@ -23,25 +23,25 @@ else{ ?>
                 <td class="w-100"><img src="<?=base_url("uploads/{$viewFolder}/$image->img_url");?>" alt="<?=$image->img_url?>" class="img-responsive" style="width:40px"></td>
                 <td><?=$image->img_url;?></td>
                 <td class="w-100 text-center"> <input
-                        data_url="<?=base_url("product/isActiveSetter/");?>"
+                        data-url="<?=base_url("product/isActiveSetter/");?>"
                         class="isActive"
                         type="checkbox"
                         data-switchery
                         data-color="#10c469"
                         data-size="small"
-                        <?= ($image->id)  ? "checked" : "";?>
+                        <?= ($image->isActive)  ? "checked" : "";?>
                     /></td>
                 <td class="w-100 text-center"> <input
-                            data_url="<?=base_url("product/isActiveSetter/");?>"
-                            class="isActive"
+                            data-url="<?= base_url("product/isCoverSetter/$image->id/$image->product_id"); ?>"
+                            class="isCover"
                             type="checkbox"
                             data-switchery
                             data-color="#35b8e0"
                             data-size="small"
-                        <?= ($image->id)  ? "checked" : "";?>
+                        <?= ($image->isCover)  ? "checked" : "";?>
                     /></td>
                 <td class="w-100 text-center">
-                    <button type="button"
+                    <button
                             data_url="<?=base_url("product/delete/");?>"
                             class="btn btn-xs btn-danger btn-outline remove-btn btn-block">
                         <i class="fa fa-trash"></i> Sil
