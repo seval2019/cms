@@ -38,8 +38,15 @@
         })
         /*Dropzone ayarları*/
         var uploadSection=Dropzone.forElement("#dropzone");
-        uploadSection.on("complete",function (){
-            alert();
+        uploadSection.on("complete",function (file){
+            //console.log(file);
+            var $data_url=$("#dropzone").data("url");
+
+            $.post($data_url,{},function (response){
+                //alert(response);
+
+               $(".image_list_container").html(response);
+            });
         })
 
     });
