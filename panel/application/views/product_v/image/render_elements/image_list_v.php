@@ -12,6 +12,7 @@ else{ ?>
             <th>Görsel</th>
             <th>Görsel Adı</th>
             <th>Durumu</th>
+            <th>Kapak</th>
             <th>İşlem</th>
         </tr>
         </thead>
@@ -28,6 +29,15 @@ else{ ?>
                         data-switchery
                         data-color="#10c469"
                         data-size="small"
+                        <?= ($image->id)  ? "checked" : "";?>
+                    /></td>
+                <td class="w-100 text-center"> <input
+                            data_url="<?=base_url("product/isActiveSetter/");?>"
+                            class="isActive"
+                            type="checkbox"
+                            data-switchery
+                            data-color="#35b8e0"
+                            data-size="small"
                         <?= ($image->id)  ? "checked" : "";?>
                     /></td>
                 <td class="w-100 text-center">
