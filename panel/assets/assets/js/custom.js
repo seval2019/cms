@@ -36,5 +36,10 @@
            var  $data_url=$(this).data("url");
            $.post($data_url ,{data : $data},function(response){}); //alert(response);//urlden gelen cevapları karşılayacak
         })
+        /*Dropzone ayarları*/
+        var uploadSection=Dropzone.forElement("#dropzone");
+        uploadSection.on("complete",function (){
+            alert();
+        })
 
     });

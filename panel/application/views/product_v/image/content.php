@@ -3,7 +3,7 @@
             <div class="widget">
                 <hr class="widget-separator">
                 <div class="widget-body">
-                    <form action="<?=base_url("product/image_upload/$item->id")?>" class="dropzone" data-plugin="dropzone" data-options="{ url: '<?=base_url("product/image_upload/$item->id")?>'}">
+                    <form action="<?=base_url("product/image_upload/$item->id")?>" id="dropzone" class="dropzone" data-plugin="dropzone" data-options="{ url: '<?=base_url("product/image_upload/$item->id")?>'}">
                         <div class="dz-message">
                             <h3 class="m-h-lg">Yüklemek istediğiniz resimleri buraya sürükleyiniz.</h3>
                             <p class="m-b-lg text-muted">(Yüklemek için resimleri sürükleyebilir yada buraya tıklayabilirsiniz...)</p>
