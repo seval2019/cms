@@ -4,7 +4,7 @@
         $(".sortable").sortable();
 
         /*Sweeatalert2 Code*/
-        $(".remove-btn").click(function(){
+        $(".content-container, .image_list_container").on("click",".remove-btn",function(){
            var data_url=$(this).attr("data_url");
             Swal.fire({
                 title: 'Emin misiniz?',
@@ -24,11 +24,11 @@
 
         /*Durum Toggle Button Code*/
         $(".content-container, .image_list_container").on('change','.isActive',function(){
-           var data=$(this).prop("checked");
-            var data_url=$(this).attr("data_url");
+           var $data=$(this).prop("checked");
+            var $data_url=$(this).data("url");
 
-            if(typeof data !== "undefined" && typeof data_url !== "undefined"){
-               $.post(data_url ,{data : data},function(response){
+            if(typeof $data !== "undefined" && typeof $data_url !== "undefined"){
+               $.post($data_url ,{data : $data},function(response){
 
                });
 
@@ -60,12 +60,13 @@
                             jackColor: jackColor
                         });
                     });
+                    $(".sortable").sortable();
                 });
             }
         });
 
         /*Sortable add db*/
-        $(".sortable").on("sortupdate",function (event,ui){
+        $(".content-container, .image_list_container").on("sortupdate",'.sortable',function (event,ui){
            var  $data=$(this).sortable("serialize"); //Serialize :Burada oluşturulan değişkenin verisini url olarak alır.
            var  $data_url=$(this).data("url");
            $.post($data_url ,{data : $data},function(response){}); //alert(response);//urlden gelen cevapları karşılayacak
@@ -93,9 +94,8 @@
                         size: size,
                         jackColor: jackColor
                     });
-            });
-        })
-
-    });
-
+                });
+                $(".sortable").sortable();
+             })
+         })
     });

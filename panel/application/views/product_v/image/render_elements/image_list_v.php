@@ -6,17 +6,19 @@
     <table class="table table-bordered table-striped table-hover pictures_list">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Görsel</th>
-                <th>Görsel Adı</th>
-                <th>Durumu</th>
-                <th>Kapak</th>
-                <th>İşlem</th>
+                <th style="width: 50px"><i class="fa fa-reorder"></i></th>
+                <th class="text-center">Id</th>
+                <th class="text-center">Görsel</th>
+                <th class="text-center">Görsel Adı</th>
+                <th class="text-center">Durumu</th>
+                <th class="text-center">Kapak</th>
+                <th class="text-center">İşlem</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="sortable" data-url="<?=base_url("product/imageRankSetter")?>">
         <?php foreach($item_images as $image){?>
-            <tr>
+            <tr id="ord-<?=$image->id?>">
+                <td><i class="fa fa-reorder"></i></td>
                 <td class="w-100 text-center">#<?=$image->id;?></td>
                 <td class="w-100">
                     <img src="<?=base_url("uploads/{$viewFolder}/$image->img_url"); ?>" alt="<?= $image->img_url; ?>" class="img-responsive" style="width:40px">
@@ -46,7 +48,7 @@
                 </td>
                 <td class="w-100 text-center">
                     <button
-                            data_url="<?=base_url("product/delete/");?>"
+                            data_url="<?=base_url("product/imageDelete/$image->id/$image->product_id");?>"
                             class="btn btn-xs btn-danger btn-outline remove-btn btn-block">
                         <i class="fa fa-trash"></i> Sil
                     </button>

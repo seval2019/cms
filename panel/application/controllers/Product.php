@@ -150,13 +150,27 @@ class Product extends CI_Controller {
             }else{
                 redirect(base_url("product"));
             }
-            /*Tablodan id si verilen verinin alınması */
-            $item=$this->product_model->get(
-                array(
-                    "id"=>$id
-                )
-            );
         }
+
+    public function imageDelete($id,$parent_id){
+        $fileName=$this->product_image_model->get(
+          array(
+              "id" => $id
+          )
+        );
+
+        $delete=$this->product_image_model->delete(
+            array(
+                "id"=>$id
+            )
+        );
+        if($delete){
+            unlink("uploads/{$this->viewFolder}/$fileName->img_url");
+            redirect(base_url("product/image_form/$parent_id"));
+        }else{
+            redirect(base_url("product/image_form/$parent_id"));
+        }
+    }
 
     public function isActiveSetter($id){
        if($id){
@@ -216,14 +230,14 @@ class Product extends CI_Controller {
 
             $viewData = new stdClass();
 
-            /** View'e gönderilecek Değişkenlerin Set Edilmesi.. */
+            /** View'e gönderilecek kısmın yeniden yüklenmesi.. */
             $viewData->viewFolder = $this->viewFolder;
             $viewData->subViewFolder = "image";
 
             $viewData->item_images = $this->product_image_model->get_all(
                 array(
                     "product_id"    => $parent_id
-                )
+                ), "rank ASC"
             );
 
             $render_html = $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/render_elements/image_list_v", $viewData, true);
@@ -251,6 +265,24 @@ class Product extends CI_Controller {
 
     }
 
+    public function imageRankSetter(){
+
+        $data=$this->input->post("data");
+        parse_str($data,$order);
+        $items=$order["ord"];
+        foreach ($items as $rank =>$id){
+            $this->product_image_model->update(
+                array(
+                    "id"      =>$id,
+                    "rank !=" =>$rank
+                ),array(
+                    "rank"    =>$rank
+                )
+            );
+        }
+
+    }
+
     public function image_form($id){
 
         $viewData=new stdClass();
@@ -266,7 +298,7 @@ class Product extends CI_Controller {
         $viewData->item_images=$this->product_image_model->get_all(
             array(
               "product_id" =>$id
-            )
+            ),"rank ASC"
         );
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
     }
@@ -293,7 +325,6 @@ class Product extends CI_Controller {
                      "isCover"    =>0,
                      "createdAt"  =>date("Y-m-d H:i:s"),
                      "product_id" =>$id
-
                  )
              );
         }else{

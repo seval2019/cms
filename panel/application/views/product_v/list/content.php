@@ -7,13 +7,13 @@
         <div class="widget p-lg">
             <?php if(empty($items))
             {?>
-                <div class="alert alert-info text-center content-container">
+                <div class="alert alert-info text-center">
                     <p>Aradığınız ürün bulunamamaktadır. Eklemek için lütfen <a href="<?=base_url("product/new_form");?>">tıklayınız</a></p>
                 </div>
             <?php }
             else{ ?>
 
-            <table class="table table-striped">
+            <table class="table table-striped content-container">
                 <thead>
                     <th><i class="fa fa-reorder"></i></th>
                     <th>#id</th>
@@ -35,7 +35,7 @@
                             <td><?=$veriler->description?></td>
                             <td>
                                 <input
-                                        data_url="<?=base_url("product/isActiveSetter/$veriler->id");?>"
+                                        data-url="<?=base_url("product/isActiveSetter/$veriler->id");?>"
                                         class="isActive"
                                         type="checkbox"
                                         data-switchery
