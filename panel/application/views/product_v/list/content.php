@@ -7,7 +7,7 @@
         <div class="widget p-lg">
             <?php if(empty($items))
             {?>
-                <div class="alert alert-info text-center">
+                <div class="alert alert-info text-center content-container">
                     <p>Aradığınız ürün bulunamamaktadır. Eklemek için lütfen <a href="<?=base_url("product/new_form");?>">tıklayınız</a></p>
                 </div>
             <?php }

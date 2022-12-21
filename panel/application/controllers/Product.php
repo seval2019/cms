@@ -12,6 +12,7 @@ class Product extends CI_Controller {
         $this->load->model("product_model");
         $this->load->model("product_image_model");
     }
+
     public function index()
 	{
         $viewData=new stdClass();
@@ -26,6 +27,7 @@ class Product extends CI_Controller {
         $viewData->items=$items;
 		$this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
 	}
+
     public function new_form()
     {
         $viewData=new stdClass();
@@ -36,6 +38,7 @@ class Product extends CI_Controller {
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
 
     }
+
     public function save()
     {
         $this->load->library("form_validation");
@@ -73,6 +76,7 @@ class Product extends CI_Controller {
             $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
         }
     }
+
     public function update_form($id)
     {
         /*Tablodan is si verilen verinin alınması */
@@ -90,6 +94,7 @@ class Product extends CI_Controller {
         $viewData->item=$item;
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
     }
+
     public function update($id)
     {
         $this->load->library("form_validation");
@@ -133,6 +138,7 @@ class Product extends CI_Controller {
             $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
         }
     }
+
     public function delete($id){
             $delete=$this->product_model->delete(
                 array(
@@ -151,6 +157,7 @@ class Product extends CI_Controller {
                 )
             );
         }
+
     public function isActiveSetter($id){
        if($id){
            $isActive=($this->input->post("data")==="true") ? 1 :0;
@@ -164,6 +171,21 @@ class Product extends CI_Controller {
             );
        }
     }
+
+    public function imageIsActiveSetter($id){
+        if($id){
+            $isActive=($this->input->post("data")==="true") ? 1 :0;
+            $this->product_image_model->update(
+                array(
+                    "id" =>$id
+                ),
+                array(
+                    "isActive" =>$isActive
+                )
+            );
+        }
+    }
+
     public function isCoverSetter($id, $parent_id){
 
         if($id && $parent_id){
@@ -210,6 +232,7 @@ class Product extends CI_Controller {
 
         }
     }
+
     public function rankSetter(){
 
         $data=$this->input->post("data");
@@ -227,6 +250,7 @@ class Product extends CI_Controller {
         }
 
     }
+
     public function image_form($id){
 
         $viewData=new stdClass();
@@ -246,6 +270,7 @@ class Product extends CI_Controller {
         );
         $this->load->view("{$viewData->viewFolder}/{$viewData->subViewFolder}/index",$viewData);
     }
+
     public function image_upload($id){
         //dosya isminin seoya uygun olarak kaydedilmesi için
         $file_name=convertToSeo(pathinfo($_FILES["file"]["name"],PATHINFO_FILENAME)).".".pathinfo($_FILES["file"]["name"],PATHINFO_EXTENSION);
@@ -276,6 +301,7 @@ class Product extends CI_Controller {
         }
 
     }
+
     public function refresh_image_list($id){
         $viewData=new stdClass();
         /* view'e gönderilecek değişkenlerin set edilmesi */
