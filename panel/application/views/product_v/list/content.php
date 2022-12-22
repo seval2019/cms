@@ -4,6 +4,7 @@
 
     </div>
     <div class="col-md-12">
+
         <div class="widget p-lg">
             <?php if(empty($items))
             {?>
@@ -12,10 +13,9 @@
                 </div>
             <?php }
             else{ ?>
-
-            <table class="table table-striped content-container">
+            <table class="table table-striped table-bordered content-container">
                 <thead>
-                    <th><i class="fa fa-reorder"></i></th>
+                    <th class="w-40"><i class="fa-solid fa-arrow-up-right-from-square"></i></th>
                     <th>#id</th>
                     <th>Başlık</th>
                     <th>Url</th>
@@ -28,8 +28,8 @@
                 foreach ($items as $veriler)
                     {?>
                         <tr id="ord-<?=$veriler->id?>">
-                            <td><i class="fa fa-reorder"></i></td>
-                            <td><?= $veriler->id ?></td>
+                            <td class="text-center"><i class="fa-solid fa-bars"></i></td>
+                            <td class="text-center"><?= $veriler->id ?></td>
                             <td><?= $veriler->title ?></td>
                             <td><?= $veriler->url ?></td>
                             <td><?=$veriler->description?></td>
@@ -48,7 +48,7 @@
                                 <button type="button"
                                         data_url="<?=base_url("product/delete/$veriler->id");?>"
                                         class="btn btn-xs btn-danger btn-outline remove-btn">
-                                    <i class="fa fa-trash"></i>
+                                    <i class="fa-regular fa-trash-can"></i>
                                 </button>
                                 <a type="button" href="<?=base_url("product/update_form/$veriler->id");?>" class="btn btn-xs btn-info btn-outline">
                                     <i class="fa fa-pencil-square-o"></i></a>

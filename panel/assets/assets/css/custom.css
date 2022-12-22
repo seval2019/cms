@@ -3,3 +3,18 @@
     color: #ff5b5b;
     font-style: italic;
 }
+td{
+    vertical-align:middle !important;
+}
+th{
+    text-align: center !important;
+}
+.w-100{
+    width: 100px;
+}
+.w-40{
+    width: 40px;
+}
+.sortable{
+    cursor: move;
+}

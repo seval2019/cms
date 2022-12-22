@@ -51,7 +51,9 @@ class Product extends CI_Controller {
             );
         //Form Validation Çalıştırılır...
         $validate=$this->form_validation->run();
+
         if($validate){
+
             $insert=$this->product_model->add(array(
                 "title"        =>$this->input->post("title"),
                 "description"  =>$this->input->post("description"),
@@ -60,11 +62,27 @@ class Product extends CI_Controller {
                 "isActive"     =>1,
                 "createdAt"    =>date("Y-m-d H:i:s")
             ));
-            if($insert){
-               redirect(base_url("product"));
+            if($insert)
+            {
+                $alert=array(
+                    "title" =>"İşlem Başarılı...",
+                    "text" => "Kayıt başarılı bir şekilde eklendi...",
+                    "type" => "success"
+                );
+
             }else{
-                redirect(base_url("product"));
+
+                $alert=array(
+                    "title" =>"İşlem Başarısız...",
+                    "text" => "Kayıt ekleme işlemi gerçekleşemedi...",
+                    "type" => "error"
+                );
+
             }
+            //işlemin sonucunu session'a yazdırma
+            $this->session->set_flashdata("alert",$alert);
+            redirect(base_url("product"));
+
         }else{
             //Değilse hata ekranda görünür
             //echo validation_errors();
