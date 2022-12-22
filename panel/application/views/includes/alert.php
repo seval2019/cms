@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 
 $alert=$this->session->userdata('alert');
 
@@ -24,4 +24,4 @@ if($alert){
         </script>
 
     <?php }
-}?>
+}?>-->

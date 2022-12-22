@@ -77,26 +77,26 @@ class News extends CI_Controller
 
             // TODO Alert sistemi eklenecek...
             if($insert){
-
-                $alert = array(
-                    "title" => "İşlem Başarılı",
-                    "text" => "Kayıt başarılı bir şekilde eklendi",
-                    "type"  => "success"
-                );
+                redirect(base_url("product"));
+                /* $alert = array(
+                     "title" => "İşlem Başarılı",
+                     "text" => "Kayıt başarılı bir şekilde güncellendi",
+                     "type"  => "success"
+                 );*/
 
             } else {
+                redirect(base_url("product"));
+                /* $alert = array(
+                     "title" => "İşlem Başarılı",
+                     "text" => "Güncelleme sırasında bir problem oluştu",
+                     "type"  => "error"
+                 );*/
 
-                $alert = array(
-                    "title" => "İşlem Başarılı",
-                    "text" => "Kayıt Ekleme sırasında bir problem oluştu",
-                    "type"  => "error"
-                );
+
             }
 
-            // İşlemin Sonucunu Session'a yazma işlemi...
-            $this->session->set_flashdata("alert", $alert);
-
-            redirect(base_url("product"));
+            /*$this->session->set_flashdata("alert", $alert);
+            redirect(base_url("product"));*/
 
         } else {
 
@@ -173,26 +173,26 @@ class News extends CI_Controller
 
             // TODO Alert sistemi eklenecek...
             if($update){
-
-                $alert = array(
+                redirect(base_url("product"));
+               /* $alert = array(
                     "title" => "İşlem Başarılı",
                     "text" => "Kayıt başarılı bir şekilde güncellendi",
                     "type"  => "success"
-                );
+                );*/
 
             } else {
-
-                $alert = array(
+                redirect(base_url("product"));
+               /* $alert = array(
                     "title" => "İşlem Başarılı",
                     "text" => "Güncelleme sırasında bir problem oluştu",
                     "type"  => "error"
-                );
+                );*/
 
 
             }
 
-            $this->session->set_flashdata("alert", $alert);
-            redirect(base_url("product"));
+            /*$this->session->set_flashdata("alert", $alert);
+            redirect(base_url("product"));*/
 
         } else {
 
@@ -231,26 +231,26 @@ class News extends CI_Controller
 
         // TODO Alert Sistemi Eklenecek...
         if($delete){
-
-            $alert = array(
-                "title" => "İşlem Başarılı",
-                "text" => "Kayıt başarılı bir şekilde silindi",
-                "type"  => "success"
-            );
+            redirect(base_url("product"));
+            /* $alert = array(
+                 "title" => "İşlem Başarılı",
+                 "text" => "Kayıt başarılı bir şekilde güncellendi",
+                 "type"  => "success"
+             );*/
 
         } else {
-
-            $alert = array(
-                "title" => "İşlem Başarılı",
-                "text" => "Kayıt silme sırasında bir problem oluştu",
-                "type"  => "error"
-            );
+            redirect(base_url("product"));
+            /* $alert = array(
+                 "title" => "İşlem Başarılı",
+                 "text" => "Güncelleme sırasında bir problem oluştu",
+                 "type"  => "error"
+             );*/
 
 
         }
 
-        $this->session->set_flashdata("alert", $alert);
-        redirect(base_url("product"));
+        /*$this->session->set_flashdata("alert", $alert);
+        redirect(base_url("product"));*/
 
 
     }
