@@ -89,7 +89,7 @@
                     </a>
                 </li>
                 <li class="has-submenu">
-                    <a href="javascript:void(0)">
+                    <a href="<?=base_url("news")?>">
                         <i class="menu-icon fa fa-newspaper-o"></i>
                         <span class="menu-text">News</span>
                     </a>

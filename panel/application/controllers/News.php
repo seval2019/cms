@@ -1,6 +1,6 @@
 <?php
 
-class Product extends CI_Controller
+class News extends CI_Controller
 {
     public $viewFolder = "";
 
@@ -9,10 +9,9 @@ class Product extends CI_Controller
 
         parent::__construct();
 
-        $this->viewFolder = "product_v";
+        $this->viewFolder = "news_v";
 
-        $this->load->model("product_model");
-        $this->load->model("product_image_model");
+        $this->load->model("news_model");
 
     }
 
@@ -21,7 +20,7 @@ class Product extends CI_Controller
         $viewData = new stdClass();
 
         /** Tablodan Verilerin Getirilmesi.. */
-        $items = $this->product_model->get_all(
+        $items = $this->news_model->get_all(
             array(), "rank ASC"
         );
 
@@ -62,12 +61,10 @@ class Product extends CI_Controller
         // TRUE - FALSE
         $validate = $this->form_validation->run();
 
-        // Monitör Askısı
-        // monitor-askisi
 
         if($validate){
 
-            $insert = $this->product_model->add(
+            $insert = $this->news_model->add(
                 array(
                     "title"         => $this->input->post("title"),
                     "description"   => $this->input->post("description"),
@@ -125,7 +122,7 @@ class Product extends CI_Controller
         $viewData = new stdClass();
 
         /** Tablodan Verilerin Getirilmesi.. */
-        $item = $this->product_model->get(
+        $item = $this->news_model->get(
             array(
                 "id"    => $id,
             )
@@ -163,7 +160,7 @@ class Product extends CI_Controller
 
         if($validate){
 
-            $update = $this->product_model->update(
+            $update = $this->news_model->update(
                 array(
                     "id"    => $id
                 ),
@@ -202,7 +199,7 @@ class Product extends CI_Controller
             $viewData = new stdClass();
 
             /** Tablodan Verilerin Getirilmesi.. */
-            $item = $this->product_model->get(
+            $item = $this->news_model->get(
                 array(
                     "id"    => $id,
                 )
@@ -226,7 +223,7 @@ class Product extends CI_Controller
 
     public function delete($id){
 
-        $delete = $this->product_model->delete(
+        $delete = $this->news_model->delete(
             array(
                 "id"    => $id
             )
@@ -291,7 +288,7 @@ class Product extends CI_Controller
 
             $isActive = ($this->input->post("data") === "true") ? 1 : 0;
 
-            $this->product_model->update(
+            $this->news_model->update(
                 array(
                     "id"    => $id
                 ),
@@ -378,7 +375,7 @@ class Product extends CI_Controller
 
         foreach ($items as $rank => $id){
 
-            $this->product_model->update(
+            $this->news_model->update(
                 array(
                     "id"        => $id,
                     "rank !="   => $rank
@@ -425,7 +422,7 @@ class Product extends CI_Controller
         $viewData->viewFolder = $this->viewFolder;
         $viewData->subViewFolder = "image";
 
-        $viewData->item = $this->product_model->get(
+        $viewData->item = $this->news_model->get(
             array(
                 "id"    => $id
             )
