@@ -6,7 +6,7 @@ $(document).ready(function () {
 
         var $data_url = $(this).data("url");
 
-        swal({
+         swal.fire({
             title: 'Emin misiniz?',
             text: "Bu işlemi geri alamayacaksınız!",
             type: 'warning',

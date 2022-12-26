@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li class="has-submenu">
-                    <a href="javascript:void(0)>
+                    <a href="<?=base_url("references")?>">
                         <i class="menu-icon zmdi zmdi-check zmdi-hc-lg"></i>
                         <span class="menu-text">Referances</span>
                     </a>

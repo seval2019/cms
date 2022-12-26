@@ -234,26 +234,10 @@ class Product extends CI_Controller
 
         // TODO Alert Sistemi Eklenecek...
         if($delete){
-
-            $alert = array(
-                "title" => "İşlem Başarılı",
-                "text" => "Kayıt başarılı bir şekilde silindi",
-                "type"  => "success"
-            );
-
+            redirect(base_url("product"));
         } else {
-
-            $alert = array(
-                "title" => "İşlem Başarılı",
-                "text" => "Kayıt silme sırasında bir problem oluştu",
-                "type"  => "error"
-            );
-
-
+            redirect(base_url("product"));
         }
-
-        $this->session->set_flashdata("alert", $alert);
-        redirect(base_url("product"));
 
 
     }

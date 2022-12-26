@@ -36,7 +36,26 @@
                             <td><?= $veriler->url ?></td>
                             <td><?=$veriler->description?></td>
                             <td><?= $veriler->news_type?></td>
-                            <td></td>
+                            <td class="w-100">
+                                <?php
+                                if($veriler->news_type=="image"){?>
+
+                                    <img src="<?=base_url("uploads/$viewFolder/$veriler->img_url"); ?>" alt="" class="img-rounded">
+
+                                <?php } else if($veriler->news_type=="video"){?>
+
+                                    <iframe
+                                            width="110px"
+                                            height="70px"
+                                            src="<?php echo $veriler->video_url; ?>"
+                                            frameborder="0"
+                                            gesture="media"
+                                            allow="encrypted-media"
+                                            allowfullscreen>
+                                    </iframe>
+
+                                <?php } ?>
+                            </td>
                             <td>
                                 <input
                                         data-url="<?=base_url("news/isActiveSetter/$veriler->id");?>"
@@ -50,11 +69,11 @@
                             </td>
                             <td>
                                 <button type="button"
-                                        data_url="<?=base_url("news/delete/$veriler->id");?>"
+                                        data-url="<?=base_url("news/delete/$veriler->id");?>"
                                         class="btn btn-xs btn-danger btn-outline remove-btn">
                                     <i class="fa-regular fa-trash-can"></i>
                                 </button>
-                                <a type="button" href="<?=base_url("news/update_form/$veriler->id");?>" class="btn btn-xs btn-info btn-outline">
+                                <a type="button" href="<?=base_url("news/update_form/$veriler->id");?>" class="btn btn-xs btn-info btn-outline update-btn">
                                     <i class="fa fa-pencil-square-o"></i></a>
                         </tr>
                     <?php

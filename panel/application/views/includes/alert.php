@@ -1,4 +1,4 @@
-<!--<?php
+<?php
 
 $alert=$this->session->userdata('alert');
 
@@ -6,11 +6,11 @@ if($alert){
 
     if($alert["type"]==="success"){?>
         <script>
-            iziToast.success({
+                iziToast.success({
                     title: '<?=$alert['title']?>',
                     message: '<?=$alert['text']?>',
-                position: 'topRight'
-            })
+                    position: 'topRight'
+                })
         </script>
 
     <?php }else{ ?>
@@ -24,4 +24,4 @@ if($alert){
         </script>
 
     <?php }
-}?>-->
+}?>
