@@ -5,5 +5,7 @@ $convert =array("c","c","g","g","u","u","o","o","i","i","s","s","-","-","-","-",
 return strtolower(str_replace($turkce, $convert ,$text));
 }
 
-function getFileName(){
+function get_readable_date($date){
+    //return strftime("%e %B %Y",strtotime($date));
+    return  date('d M Y', strtotime($date));
 }
